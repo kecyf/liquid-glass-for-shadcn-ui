@@ -4,8 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ================================================
-   🌊 LIQUID GLASS THEME FOR SHADCN/UI
-   Based on Apple's Liquid Glass design language
+   🍎 LIQUID GLASS THEME FOR SHADCN/UI v2.0
+   Based on Apple's Official Liquid Glass Design System
+   macOS Tahoe / iOS 26 / iPadOS 26
+   
+   Source: Apple Design Resources (Figma)
+   WWDC25: Meet Liquid Glass
    ================================================ */
 
 @theme inline {
@@ -48,143 +52,129 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-pill: 9999px;
+  
+  /* Glass tokens for Tailwind */
+  --blur-glass: 15px;
 }
 
 /* ================================================
    LIQUID GLASS - LIGHT MODE
-   Bright, airy, floating aesthetic
+   Apple's Light Appearance
    ================================================ */
 :root {
-  --radius: 1rem;
+  --radius: 12px;
   
-  /* Core colors - soft, bright */
+  /* Core Colors */
   --background: oklch(0.985 0.002 240);
-  --foreground: oklch(0.15 0.01 240);
+  --foreground: oklch(0.1 0.01 240);
   
-  /* Glass surfaces */
-  --glass: oklch(1 0 0 / 60%);
-  --glass-border: oklch(1 0 0 / 80%);
-  --glass-highlight: oklch(1 0 0 / 90%);
-  --glass-blur: 20px;
+  /* Glass Materials (Apple Official) */
+  --glass-ultrathin: rgba(255, 255, 255, 0.1);
+  --glass-thin: rgba(255, 255, 255, 0.2);
+  --glass-medium: rgba(255, 255, 255, 0.35);
+  --glass-thick: rgba(255, 255, 255, 0.5);
+  --glass-ultrathick: rgba(255, 255, 255, 0.65);
+  --glass-blur: 15px;
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-border-subtle: rgba(255, 255, 255, 0.2);
+  --glass-highlight: rgba(255, 255, 255, 0.8);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
   
-  /* Cards - translucent glass */
-  --card: oklch(1 0 0 / 70%);
-  --card-foreground: oklch(0.15 0.01 240);
-  
-  /* Popovers - elevated glass */
-  --popover: oklch(1 0 0 / 85%);
-  --popover-foreground: oklch(0.15 0.01 240);
-  
-  /* Primary - vibrant blue (Apple accent) */
-  --primary: oklch(0.6 0.2 250);
+  /* shadcn Semantic Tokens */
+  --card: var(--glass-medium);
+  --card-foreground: oklch(0.1 0.01 240);
+  --popover: var(--glass-thick);
+  --popover-foreground: oklch(0.1 0.01 240);
+  --primary: oklch(0.55 0.25 255);
   --primary-foreground: oklch(1 0 0);
+  --secondary: var(--glass-thin);
+  --secondary-foreground: oklch(0.2 0.01 240);
+  --muted: var(--glass-ultrathin);
+  --muted-foreground: oklch(0.4 0.01 240);
+  --accent: rgba(0, 122, 255, 0.1);
+  --accent-foreground: oklch(0.15 0.01 240);
+  --destructive: oklch(0.55 0.25 25);
+  --border: var(--glass-border-subtle);
+  --input: var(--glass-thin);
+  --ring: oklch(0.55 0.25 255 / 50%);
   
-  /* Secondary - soft gray glass */
-  --secondary: oklch(0.95 0.005 240 / 80%);
-  --secondary-foreground: oklch(0.25 0.01 240);
-  
-  /* Muted - subtle backgrounds */
-  --muted: oklch(0.96 0.003 240 / 60%);
-  --muted-foreground: oklch(0.45 0.01 240);
-  
-  /* Accent - light tint */
-  --accent: oklch(0.95 0.02 250 / 50%);
-  --accent-foreground: oklch(0.2 0.01 240);
-  
-  /* Destructive - soft red */
-  --destructive: oklch(0.65 0.2 25);
-  
-  /* Borders - subtle glass edge */
-  --border: oklch(0.9 0.01 240 / 50%);
-  --input: oklch(0.92 0.005 240 / 60%);
-  --ring: oklch(0.6 0.2 250 / 50%);
-  
-  /* Charts - vibrant spectrum */
-  --chart-1: oklch(0.65 0.2 250);
-  --chart-2: oklch(0.7 0.15 180);
-  --chart-3: oklch(0.75 0.18 80);
-  --chart-4: oklch(0.65 0.22 320);
-  --chart-5: oklch(0.7 0.2 30);
+  /* Charts */
+  --chart-1: oklch(0.55 0.25 255);
+  --chart-2: oklch(0.6 0.2 160);
+  --chart-3: oklch(0.65 0.22 45);
+  --chart-4: oklch(0.55 0.25 320);
+  --chart-5: oklch(0.6 0.2 25);
   
   /* Sidebar */
-  --sidebar: oklch(0.98 0.003 240 / 70%);
-  --sidebar-foreground: oklch(0.15 0.01 240);
-  --sidebar-primary: oklch(0.6 0.2 250);
+  --sidebar: var(--glass-medium);
+  --sidebar-foreground: oklch(0.1 0.01 240);
+  --sidebar-primary: oklch(0.55 0.25 255);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.95 0.02 250 / 40%);
-  --sidebar-accent-foreground: oklch(0.2 0.01 240);
-  --sidebar-border: oklch(0.9 0.01 240 / 40%);
-  --sidebar-ring: oklch(0.6 0.2 250 / 50%);
+  --sidebar-accent: var(--glass-thin);
+  --sidebar-accent-foreground: oklch(0.15 0.01 240);
+  --sidebar-border: var(--glass-border-subtle);
+  --sidebar-ring: oklch(0.55 0.25 255 / 50%);
 }
 
 /* ================================================
    LIQUID GLASS - DARK MODE
-   Deep, rich, luminous aesthetic
+   Apple's Official Specs from Figma
    ================================================ */
 .dark {
-  /* Core colors - deep, rich */
-  --background: oklch(0.12 0.02 260);
+  --background: oklch(0.1 0.02 260);
   --foreground: oklch(0.95 0.01 240);
   
-  /* Glass surfaces - dark glass with subtle luminosity */
-  --glass: oklch(0.2 0.02 260 / 50%);
-  --glass-border: oklch(1 0 0 / 15%);
-  --glass-highlight: oklch(1 0 0 / 10%);
-  --glass-blur: 24px;
+  /* Glass Materials - Apple's EXACT values from Figma */
+  --glass-ultrathin: rgba(0, 0, 0, 0.1);   /* 10% */
+  --glass-thin: rgba(0, 0, 0, 0.2);        /* 20% */
+  --glass-medium: rgba(0, 0, 0, 0.29);     /* 29% - Apple's exact */
+  --glass-thick: rgba(0, 0, 0, 0.4);       /* 40% */
+  --glass-ultrathick: rgba(0, 0, 0, 0.5);  /* 50% */
+  --glass-blur: 15px;
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-border-subtle: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
   
-  /* Cards - dark translucent */
-  --card: oklch(0.18 0.02 260 / 60%);
+  /* shadcn Semantic */
+  --card: var(--glass-medium);
   --card-foreground: oklch(0.95 0.01 240);
-  
-  /* Popovers - elevated dark glass */
-  --popover: oklch(0.2 0.02 260 / 80%);
+  --popover: var(--glass-thick);
   --popover-foreground: oklch(0.95 0.01 240);
-  
-  /* Primary - vibrant blue (glowing) */
-  --primary: oklch(0.7 0.2 250);
+  --primary: oklch(0.65 0.25 255);
   --primary-foreground: oklch(0.1 0.02 260);
-  
-  /* Secondary - dark glass */
-  --secondary: oklch(0.25 0.02 260 / 60%);
+  --secondary: var(--glass-thin);
   --secondary-foreground: oklch(0.9 0.01 240);
-  
-  /* Muted - subtle dark */
-  --muted: oklch(0.22 0.02 260 / 50%);
-  --muted-foreground: oklch(0.65 0.01 240);
-  
-  /* Accent - blue tint glow */
-  --accent: oklch(0.3 0.05 250 / 40%);
+  --muted: var(--glass-ultrathin);
+  --muted-foreground: oklch(0.6 0.01 240);
+  --accent: rgba(10, 132, 255, 0.2);
   --accent-foreground: oklch(0.95 0.01 240);
+  --destructive: oklch(0.6 0.28 25);
+  --border: var(--glass-border-subtle);
+  --input: var(--glass-thin);
+  --ring: oklch(0.65 0.25 255 / 60%);
   
-  /* Destructive - glowing red */
-  --destructive: oklch(0.65 0.25 25);
-  
-  /* Borders - luminous edges */
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.7 0.2 250 / 60%);
-  
-  /* Charts - luminous spectrum */
-  --chart-1: oklch(0.7 0.22 250);
-  --chart-2: oklch(0.75 0.18 170);
-  --chart-3: oklch(0.8 0.2 75);
-  --chart-4: oklch(0.7 0.25 310);
-  --chart-5: oklch(0.75 0.22 25);
+  /* Charts */
+  --chart-1: oklch(0.65 0.25 255);
+  --chart-2: oklch(0.7 0.2 160);
+  --chart-3: oklch(0.75 0.22 45);
+  --chart-4: oklch(0.65 0.28 320);
+  --chart-5: oklch(0.7 0.22 25);
   
   /* Sidebar */
-  --sidebar: oklch(0.15 0.02 260 / 70%);
+  --sidebar: var(--glass-medium);
   --sidebar-foreground: oklch(0.95 0.01 240);
-  --sidebar-primary: oklch(0.7 0.2 250);
+  --sidebar-primary: oklch(0.65 0.25 255);
   --sidebar-primary-foreground: oklch(0.1 0.02 260);
-  --sidebar-accent: oklch(0.3 0.05 250 / 30%);
+  --sidebar-accent: var(--glass-thin);
   --sidebar-accent-foreground: oklch(0.95 0.01 240);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.7 0.2 250 / 60%);
+  --sidebar-border: var(--glass-border-subtle);
+  --sidebar-ring: oklch(0.65 0.25 255 / 60%);
 }
 
 /* ================================================
-   LIQUID GLASS - BASE STYLES
+   BASE STYLES
    ================================================ */
 @layer base {
   * {
@@ -193,87 +183,180 @@
   
   body {
     @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
   
-  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
 }
 
 /* ================================================
-   LIQUID GLASS - CUSTOM STYLES (Non-Tailwind)
+   GLASS MATERIAL UTILITIES
    ================================================ */
 
-/* Glass effect utility */
+.glass-ultrathin {
+  background: var(--glass-ultrathin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.glass-thin {
+  background: var(--glass-thin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.glass-medium,
 .glass {
-  background: var(--glass);
+  background: var(--glass-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.glass-thick {
+  background: var(--glass-thick);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.glass-ultrathick {
+  background: var(--glass-ultrathick);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* ================================================
+   GLASS CONTAINERS
+   ================================================ */
+
+.glass-container {
+  background: var(--glass-medium);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
-  box-shadow: 
-    0 0 0 1px var(--glass-highlight) inset,
-    0 4px 24px -4px oklch(0 0 0 / 10%);
+  border-radius: var(--radius);
 }
 
 .glass-card {
-  background: var(--card);
+  background: var(--glass-medium);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   box-shadow: 
-    0 0 0 1px var(--glass-highlight) inset,
-    0 4px 24px -4px oklch(0 0 0 / 10%);
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 4px 24px -4px var(--glass-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Specular highlight effect */
-.glass-highlight {
-  position: relative;
-}
-
-.glass-highlight::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    oklch(1 0 0 / 20%) 0%,
-    oklch(1 0 0 / 5%) 50%,
-    oklch(1 0 0 / 0%) 100%
-  );
-  pointer-events: none;
-}
-
-/* Glow effect for buttons */
-.glow-primary {
+.glass-card:hover {
+  transform: translateY(-2px);
   box-shadow: 
-    0 0 20px -5px var(--primary),
-    0 0 40px -10px var(--primary);
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 8px 32px -8px var(--glass-shadow);
 }
 
-/* Gradient text */
+/* ================================================
+   GLASS BUTTONS
+   ================================================ */
+
+.btn-glass {
+  background: var(--glass-thin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.btn-glass:hover {
+  background: var(--glass-medium);
+  border-color: var(--glass-border);
+  transform: scale(1.02);
+}
+
+.btn-glass-prominent {
+  background: var(--glass-thick);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 2px 8px -2px var(--glass-shadow);
+  transition: all 0.2s ease;
+}
+
+.btn-glass-prominent:hover {
+  background: var(--glass-ultrathick);
+  transform: translateY(-1px);
+}
+
+.btn-primary-glow {
+  transition: all 0.2s ease;
+}
+
+.btn-primary-glow:hover {
+  box-shadow: 
+    0 0 24px -4px var(--primary),
+    0 0 48px -8px var(--primary);
+  transform: translateY(-1px);
+}
+
+/* ================================================
+   GLASS PILL / FLOATING ISLAND
+   ================================================ */
+
+.glass-pill {
+  background: var(--glass-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 4px 24px -4px var(--glass-shadow);
+}
+
+.glass-island {
+  background: var(--glass-thick);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 8px 32px -8px var(--glass-shadow);
+}
+
+/* ================================================
+   GRADIENT TEXT
+   ================================================ */
+
 .text-gradient {
   background: linear-gradient(
     135deg,
-    oklch(0.7 0.2 250) 0%,
-    oklch(0.65 0.25 280) 50%,
-    oklch(0.7 0.2 310) 100%
+    oklch(0.6 0.25 255) 0%,
+    oklch(0.55 0.28 290) 50%,
+    oklch(0.6 0.25 320) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Animated gradient background */
+/* ================================================
+   ANIMATED BACKGROUNDS
+   ================================================ */
+
 .bg-gradient-animated {
   background: linear-gradient(
     -45deg,
     oklch(0.95 0.03 250),
     oklch(0.97 0.02 280),
     oklch(0.95 0.03 310),
-    oklch(0.97 0.02 340)
+    oklch(0.97 0.02 240)
   );
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
@@ -282,10 +365,10 @@
 .dark .bg-gradient-animated {
   background: linear-gradient(
     -45deg,
-    oklch(0.15 0.04 250),
-    oklch(0.13 0.03 280),
-    oklch(0.15 0.04 310),
-    oklch(0.13 0.03 340)
+    oklch(0.12 0.04 250),
+    oklch(0.1 0.03 280),
+    oklch(0.12 0.04 310),
+    oklch(0.1 0.03 240)
   );
   background-size: 400% 400%;
 }
@@ -296,7 +379,10 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Float animation */
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+
 .float {
   animation: float 6s ease-in-out infinite;
 }
@@ -306,31 +392,8 @@
   50% { transform: translateY(-10px); }
 }
 
-/* Button glass effect */
-.btn-glass {
-  background: var(--glass);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  transition: all 0.3s ease;
-}
-
-.btn-glass:hover {
-  background: var(--glass-highlight);
-  transform: translateY(-1px);
-  box-shadow: 
-    0 0 0 1px var(--glass-highlight) inset,
-    0 8px 32px -8px oklch(0 0 0 / 15%);
-}
-
-/* Primary button with glow */
-.btn-primary-glow {
-  transition: all 0.3s ease;
-}
-
-.btn-primary-glow:hover {
+.glow-primary {
   box-shadow: 
     0 0 20px -5px var(--primary),
     0 0 40px -10px var(--primary);
-  transform: translateY(-1px);
 }

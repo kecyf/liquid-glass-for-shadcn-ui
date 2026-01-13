@@ -1,0 +1,325 @@
+/* ================================================
+   🍎 LIQUID GLASS - UTILITY CLASSES
+   Apple-style glass effects for web
+   ================================================ */
+
+/* ================================================
+   GLASS MATERIAL UTILITIES
+   Use these to apply Apple's official glass levels
+   ================================================ */
+
+/* UltraThin Glass - Most transparent */
+.glass-ultrathin {
+  background: var(--glass-ultrathin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Thin Glass */
+.glass-thin {
+  background: var(--glass-thin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Medium Glass - Default for most UI */
+.glass-medium,
+.glass {
+  background: var(--glass-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Thick Glass - For emphasized elements */
+.glass-thick {
+  background: var(--glass-thick);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* UltraThick Glass - Most opaque */
+.glass-ultrathick {
+  background: var(--glass-ultrathick);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* ================================================
+   GLASS CONTAINERS
+   Pre-styled glass containers with borders
+   ================================================ */
+
+.glass-container {
+  background: var(--glass-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+.glass-container-thin {
+  background: var(--glass-thin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: var(--radius);
+}
+
+.glass-container-thick {
+  background: var(--glass-thick);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+/* ================================================
+   GLASS CARD
+   Enhanced card with specular highlight
+   ================================================ */
+
+.glass-card {
+  background: var(--glass-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 4px 24px -4px var(--glass-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 8px 32px -8px var(--glass-shadow);
+}
+
+/* ================================================
+   GLASS BUTTONS
+   Apple's button styles: glass, glassProminent
+   ================================================ */
+
+/* Standard glass button */
+.btn-glass {
+  background: var(--glass-thin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.btn-glass:hover {
+  background: var(--glass-medium);
+  border-color: var(--glass-border);
+  transform: scale(1.02);
+}
+
+.btn-glass:active {
+  transform: scale(0.98);
+}
+
+/* Prominent glass button (like Apple's glassProminent) */
+.btn-glass-prominent {
+  background: var(--glass-thick);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 2px 8px -2px var(--glass-shadow);
+  transition: all 0.2s ease;
+}
+
+.btn-glass-prominent:hover {
+  background: var(--glass-ultrathick);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 4px 16px -4px var(--glass-shadow);
+}
+
+/* Primary button with glow */
+.btn-primary-glow {
+  transition: all 0.2s ease;
+}
+
+.btn-primary-glow:hover {
+  box-shadow: 
+    0 0 24px -4px var(--primary),
+    0 0 48px -8px var(--primary);
+  transform: translateY(-1px);
+}
+
+/* ================================================
+   GLASS PILL / FLOATING ISLAND
+   Apple's signature floating pill navigation
+   ================================================ */
+
+.glass-pill {
+  background: var(--glass-medium);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 4px 24px -4px var(--glass-shadow);
+}
+
+/* Floating island for navigation */
+.glass-island {
+  background: var(--glass-thick);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 8px 32px -8px var(--glass-shadow),
+    0 0 0 1px var(--glass-border-subtle);
+}
+
+/* ================================================
+   GLASS TABS (Segmented Control)
+   Apple's pill-shaped tab selector
+   ================================================ */
+
+.glass-tabs {
+  background: var(--glass-thin);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+}
+
+.glass-tab {
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.glass-tab[data-state="active"],
+.glass-tab-active {
+  background: var(--glass-thick);
+  box-shadow: 
+    inset 0 1px 0 0 var(--glass-highlight),
+    0 2px 8px -2px var(--glass-shadow);
+}
+
+/* ================================================
+   SPECULAR HIGHLIGHT EFFECT
+   Adds realistic glass reflection
+   ================================================ */
+
+.glass-highlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-highlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--glass-highlight) 0%,
+    transparent 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ================================================
+   GRADIENT TEXT
+   ================================================ */
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.6 0.25 255) 0%,
+    oklch(0.55 0.28 290) 50%,
+    oklch(0.6 0.25 320) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(
+    135deg,
+    oklch(0.65 0.25 30) 0%,
+    oklch(0.6 0.28 350) 50%,
+    oklch(0.65 0.25 320) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================================================
+   ANIMATED BACKGROUNDS
+   ================================================ */
+
+.bg-gradient-animated {
+  background: linear-gradient(
+    -45deg,
+    oklch(0.95 0.03 250),
+    oklch(0.97 0.02 280),
+    oklch(0.95 0.03 310),
+    oklch(0.97 0.02 240)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.dark .bg-gradient-animated {
+  background: linear-gradient(
+    -45deg,
+    oklch(0.12 0.04 250),
+    oklch(0.1 0.03 280),
+    oklch(0.12 0.04 310),
+    oklch(0.1 0.03 240)
+  );
+  background-size: 400% 400%;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================================================
+   FLOATING ANIMATION
+   ================================================ */
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ================================================
+   GLOW EFFECTS
+   ================================================ */
+
+.glow-primary {
+  box-shadow: 
+    0 0 20px -5px var(--primary),
+    0 0 40px -10px var(--primary);
+}
+
+.glow-soft {
+  box-shadow: 0 0 60px -15px var(--primary);
+}

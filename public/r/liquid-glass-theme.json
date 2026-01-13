@@ -1,0 +1,93 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "liquid-glass-theme",
+  "type": "registry:theme",
+  "description": "Apple's Liquid Glass design system (macOS Tahoe / iOS 26) for shadcn/ui. Official specs from Apple Design Resources.",
+  "author": "kvncyf <hello@kvncyf.me>",
+  "license": "Commercial",
+  "homepage": "https://liquidglass.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kvncyf/liquid-glass-for-shadcn-ui"
+  },
+  "cssVars": {
+    "light": {
+      "radius": "12px",
+      "background": "oklch(0.985 0.002 240)",
+      "foreground": "oklch(0.1 0.01 240)",
+      "card": "rgba(255, 255, 255, 0.35)",
+      "card-foreground": "oklch(0.1 0.01 240)",
+      "popover": "rgba(255, 255, 255, 0.5)",
+      "popover-foreground": "oklch(0.1 0.01 240)",
+      "primary": "oklch(0.55 0.25 255)",
+      "primary-foreground": "oklch(1 0 0)",
+      "secondary": "rgba(255, 255, 255, 0.2)",
+      "secondary-foreground": "oklch(0.2 0.01 240)",
+      "muted": "rgba(255, 255, 255, 0.1)",
+      "muted-foreground": "oklch(0.4 0.01 240)",
+      "accent": "rgba(0, 122, 255, 0.1)",
+      "accent-foreground": "oklch(0.15 0.01 240)",
+      "destructive": "oklch(0.55 0.25 25)",
+      "border": "rgba(255, 255, 255, 0.2)",
+      "input": "rgba(255, 255, 255, 0.2)",
+      "ring": "oklch(0.55 0.25 255 / 50%)",
+      "chart-1": "oklch(0.55 0.25 255)",
+      "chart-2": "oklch(0.6 0.2 160)",
+      "chart-3": "oklch(0.65 0.22 45)",
+      "chart-4": "oklch(0.55 0.25 320)",
+      "chart-5": "oklch(0.6 0.2 25)"
+    },
+    "dark": {
+      "radius": "12px",
+      "background": "oklch(0.1 0.02 260)",
+      "foreground": "oklch(0.95 0.01 240)",
+      "card": "rgba(0, 0, 0, 0.29)",
+      "card-foreground": "oklch(0.95 0.01 240)",
+      "popover": "rgba(0, 0, 0, 0.4)",
+      "popover-foreground": "oklch(0.95 0.01 240)",
+      "primary": "oklch(0.65 0.25 255)",
+      "primary-foreground": "oklch(0.1 0.02 260)",
+      "secondary": "rgba(0, 0, 0, 0.2)",
+      "secondary-foreground": "oklch(0.9 0.01 240)",
+      "muted": "rgba(0, 0, 0, 0.1)",
+      "muted-foreground": "oklch(0.6 0.01 240)",
+      "accent": "rgba(10, 132, 255, 0.2)",
+      "accent-foreground": "oklch(0.95 0.01 240)",
+      "destructive": "oklch(0.6 0.28 25)",
+      "border": "rgba(255, 255, 255, 0.08)",
+      "input": "rgba(0, 0, 0, 0.2)",
+      "ring": "oklch(0.65 0.25 255 / 60%)",
+      "chart-1": "oklch(0.65 0.25 255)",
+      "chart-2": "oklch(0.7 0.2 160)",
+      "chart-3": "oklch(0.75 0.22 45)",
+      "chart-4": "oklch(0.65 0.28 320)",
+      "chart-5": "oklch(0.7 0.22 25)"
+    }
+  },
+  "inlineColors": {
+    "light": {
+      "glass-ultrathin": "rgba(255, 255, 255, 0.1)",
+      "glass-thin": "rgba(255, 255, 255, 0.2)",
+      "glass-medium": "rgba(255, 255, 255, 0.35)",
+      "glass-thick": "rgba(255, 255, 255, 0.5)",
+      "glass-ultrathick": "rgba(255, 255, 255, 0.65)",
+      "glass-blur": "15px",
+      "glass-border": "rgba(255, 255, 255, 0.5)",
+      "glass-border-subtle": "rgba(255, 255, 255, 0.2)",
+      "glass-highlight": "rgba(255, 255, 255, 0.8)",
+      "glass-shadow": "rgba(0, 0, 0, 0.1)"
+    },
+    "dark": {
+      "glass-ultrathin": "rgba(0, 0, 0, 0.1)",
+      "glass-thin": "rgba(0, 0, 0, 0.2)",
+      "glass-medium": "rgba(0, 0, 0, 0.29)",
+      "glass-thick": "rgba(0, 0, 0, 0.4)",
+      "glass-ultrathick": "rgba(0, 0, 0, 0.5)",
+      "glass-blur": "15px",
+      "glass-border": "rgba(255, 255, 255, 0.15)",
+      "glass-border-subtle": "rgba(255, 255, 255, 0.08)",
+      "glass-highlight": "rgba(255, 255, 255, 0.1)",
+      "glass-shadow": "rgba(0, 0, 0, 0.3)"
+    }
+  }
+}

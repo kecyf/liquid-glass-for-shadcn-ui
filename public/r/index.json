@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "liquid-glass",
+  "description": "Apple's Liquid Glass design system for shadcn/ui",
+  "homepage": "https://liquidglass.dev",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "description": "Liquid Glass theme - Apple's official design system",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "liquid-glass-theme.json",
+          "type": "registry:theme"
+        }
+      ]
+    }
+  ]
+}
