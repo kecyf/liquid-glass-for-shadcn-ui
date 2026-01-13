@@ -1,0 +1,113 @@
+# 🌊 liquid glass for shadcn/ui
+
+## project overview
+
+**Product**: Premium shadcn/ui theme implementing Apple's Liquid Glass design language.
+**Price**: $29 (one-time purchase)
+**Target**: React/Next.js developers who want that gorgeous iOS 26 aesthetic.
+
+---
+
+## design principles (from apple docs)
+
+### core liquid glass characteristics
+1. **Translucency**: Elements appear to float with depth and layering
+2. **Dynamic blur**: Background blur that responds to content
+3. **Specular highlights**: Subtle reflections that suggest glass material
+4. **Fluid motion**: Animations that feel organic and liquid-like
+5. **Depth hierarchy**: Clear visual layers with z-depth
+
+### color philosophy
+- **Light mode**: Bright, airy with subtle tints
+- **Dark mode**: Deep, rich with glass-like reflections
+- **Accent colors**: Vibrant but harmonious with the glass effect
+
+### component styling
+- Rounded corners (generous radius)
+- Subtle borders with blur
+- Background with `backdrop-blur` + transparency
+- Soft shadows that suggest floating
+- Hover states with subtle scale/glow
+
+---
+
+## tech stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4 + CSS variables
+- **Components**: shadcn/ui (new-york style base)
+- **Fonts**: Geist Sans/Mono (default)
+- **Payments**: Stripe Checkout
+- **Deployment**: Vercel
+
+---
+
+## folder structure
+
+```
+src/
+├── app/
+│   ├── page.tsx           # Landing page
+│   ├── checkout/          # Stripe checkout
+│   └── globals.css        # Theme variables
+├── components/
+│   ├── ui/                # shadcn components
+│   └── marketing/         # Landing page components
+├── lib/
+│   ├── utils.ts
+│   └── stripe.ts
+└── themes/
+    └── liquid-glass/      # The theme files
+        ├── globals.css    # CSS variables
+        └── README.md      # Installation guide
+```
+
+---
+
+## component requirements
+
+### landing page sections
+1. **Hero**: Product showcase with animated glass elements
+2. **Features**: What makes Liquid Glass special
+3. **Preview**: Interactive component demos
+4. **Pricing**: Single $29 tier
+5. **CTA**: Buy now button → Stripe
+
+### shadcn components to style
+Priority order:
+1. Button, Card, Dialog, Dropdown
+2. Input, Select, Textarea, Checkbox
+3. Tabs, Accordion, Sheet, Popover
+4. Toast, Alert, Badge, Avatar
+
+---
+
+## development commands
+
+```bash
+bun dev          # Start dev server
+bun build        # Production build
+bun lint         # ESLint check
+```
+
+---
+
+## stripe integration
+
+- Use Stripe Checkout (simplest)
+- Product: "Liquid Glass Theme for shadcn/ui"
+- Price: $29 USD (one-time)
+- Success: Download link / GitHub access
+- Cancel: Return to landing
+
+---
+
+## deliverables
+
+1. **Landing page**: Conversion-optimized showcase
+2. **Theme package**: CSS variables + optional component overrides
+3. **Documentation**: Installation guide for shadcn users
+4. **Demo**: Interactive preview of all styled components
+
+---
+*this rule guides the liquid glass theme development* 🌊

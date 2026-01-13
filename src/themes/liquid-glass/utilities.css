@@ -1,0 +1,123 @@
+/* ================================================
+   🌊 LIQUID GLASS - UTILITY CLASSES
+   Optional utility classes for glass effects
+   ================================================ */
+
+/* Glass effect utility */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 0 0 1px var(--glass-highlight) inset,
+    0 4px 24px -4px oklch(0 0 0 / 10%);
+}
+
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 
+    0 0 0 1px var(--glass-highlight) inset,
+    0 4px 24px -4px oklch(0 0 0 / 10%);
+}
+
+/* Specular highlight effect */
+.glass-highlight {
+  position: relative;
+}
+
+.glass-highlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    oklch(1 0 0 / 20%) 0%,
+    oklch(1 0 0 / 5%) 50%,
+    oklch(1 0 0 / 0%) 100%
+  );
+  pointer-events: none;
+}
+
+/* Glow effect for buttons */
+.glow-primary {
+  box-shadow: 
+    0 0 20px -5px var(--primary),
+    0 0 40px -10px var(--primary);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.7 0.2 250) 0%,
+    oklch(0.65 0.25 280) 50%,
+    oklch(0.7 0.2 310) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated gradient background */
+.bg-gradient-animated {
+  background: linear-gradient(
+    -45deg,
+    oklch(0.95 0.03 250),
+    oklch(0.97 0.02 280),
+    oklch(0.95 0.03 310),
+    oklch(0.97 0.02 340)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Float animation */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Button glass effect */
+.btn-glass {
+  background: var(--glass);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: var(--glass-highlight);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 0 0 1px var(--glass-highlight) inset,
+    0 8px 32px -8px oklch(0 0 0 / 15%);
+}
+
+/* Primary button with glow */
+.btn-primary-glow {
+  transition: all 0.3s ease;
+}
+
+.btn-primary-glow:hover {
+  box-shadow: 
+    0 0 20px -5px var(--primary),
+    0 0 40px -10px var(--primary);
+  transform: translateY(-1px);
+}

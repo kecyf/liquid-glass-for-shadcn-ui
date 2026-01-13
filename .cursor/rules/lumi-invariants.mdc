@@ -1,0 +1,33 @@
+---
+description: lumi invariants (hard rules enforced by validators + hooks)
+alwaysApply: true
+priority: 990
+---
+
+# lumi invariants (maker-style red flags)
+
+these are **hard invariants**. if violated, commits should be blocked.
+
+## 1) forbidden paths
+
+- never create: `.cursor/current-state.json`
+- correct path is: `.cursor/state/current-state.json`
+
+## 2) session log location + naming
+
+- sessions live only in: `docs/sessions/YYYY-MM-DD/`
+- canonical filename:
+  - `docs/sessions/YYYY-MM-DD/YYYY-MM-DD-XX-focus.json`
+
+## 3) session json minimum schema
+
+- `meta.date` must exist and equal the directory date
+- `meta.session_id` must exist
+- `meta.size` must be one of: `small|medium|large|mega|auto`
+
+## enforcement (do, don't debate)
+
+- run validator: `bash .cursor/bin/validate-invariants.sh`
+- run doctor: `bash .cursor/bin/lumi-doctor.sh`
+
+project-specific rules live in each repo under `.cursor/rules/`.
